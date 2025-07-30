@@ -68,7 +68,7 @@ export default function Converter() {
             const normalized = Array.isArray(parsed) ? parsed : [parsed];
             setJsonData(normalized);
             setError("");
-        } catch (e) {
+        } catch {
             setError(t.error);
             setJsonData(null);
         }
@@ -76,8 +76,7 @@ export default function Converter() {
 
     const handleDownloadCSV = () => {
         if (!jsonData) return;
-        const array = Array.isArray(jsonData) ? jsonData : [jsonData];
-        const flattened = array.map((row) => flattenObject(row));
+        const flattened = jsonData.map(flattenObject);
         const csv = Papa.unparse(flattened);
         const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
         saveAs(blob, "converted.csv");
@@ -85,13 +84,14 @@ export default function Converter() {
 
     const handleDownloadExcel = () => {
         if (!jsonData) return;
-        const array = Array.isArray(jsonData) ? jsonData : [jsonData];
-        const flattened = array.map((row) => flattenObject(row));
+        const flattened = jsonData.map(flattenObject);
         const worksheet = XLSX.utils.json_to_sheet(flattened);
         const book = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(book, worksheet, "Sheet1");
         const buffer = XLSX.write(book, { bookType: "xlsx", type: "array" });
-        const blob = new Blob([buffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+        const blob = new Blob([buffer], {
+            type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        });
         saveAs(blob, "converted.xlsx");
     };
 
@@ -108,30 +108,24 @@ export default function Converter() {
         const fileName = file.name.toLowerCase();
 
         reader.onload = (event) => {
-            const content = event.target.result;
-
             try {
                 let parsed;
                 if (fileName.endsWith(".csv")) {
-                    const result = Papa.parse(content, { header: true });
+                    const result = Papa.parse(event.target.result, { header: true });
                     parsed = result.data;
                     setUploadJson(parsed);
                 } else if (fileName.endsWith(".xlsx")) {
-                    const wb = XLSX.read(content, { type: "binary" });
+                    const wb = XLSX.read(event.target.result, { type: "binary" });
                     setWorkbook(wb);
                     setSheetNames(wb.SheetNames);
-
-                    // 기본 첫 번째 시트 적용
-                    const firstSheetName = wb.SheetNames[0];
-                    const firstSheet = wb.Sheets[firstSheetName];
+                    const firstSheet = wb.Sheets[wb.SheetNames[0]];
                     parsed = XLSX.utils.sheet_to_json(firstSheet);
                     setUploadJson(parsed);
                 } else {
                     throw new Error("Unsupported file type");
                 }
-
                 setError("");
-            } catch (err) {
+            } catch {
                 setError(t.error);
                 setUploadJson(null);
                 setWorkbook(null);
@@ -158,24 +152,31 @@ export default function Converter() {
     return (
         <div className="p-6 max-w-5xl mx-auto">
             <div className="flex justify-between items-center mb-6">
-                <h1 className="text-3xl font-bold text-gray-800">{t.title}</h1>
+                <h1 className="text-2xl md:text-3xl font-bold text-gray-800">{t.title}</h1>
                 <select className="border rounded px-2 py-1 text-sm" value={lang} onChange={(e) => setLang(e.target.value)}>
                     <option value="ko">🇰🇷 한국어</option>
                     <option value="en">🇺🇸 English</option>
                 </select>
             </div>
 
-            <p className="text-gray-600 mb-8 text-sm">{t.description}</p>
+            {/* 사용 목적 설명 */}
+            <section className="mt-6 bg-white p-6 rounded shadow-md" aria-label="Tool Description">
+                <h2 className="text-xl font-bold mb-2 text-gray-800">What is this tool?</h2>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                    This online tool allows you to easily convert between CSV, Excel, and JSON formats. It's designed for developers, data analysts, and anyone who needs to transform data formats
+                    quickly without installing any software. Whether you’re uploading a spreadsheet or pasting raw JSON, our converter will handle it instantly.
+                </p>
+            </section>
 
-            <section className="mb-8">
-                <h2 className="text-xl font-semibold mb-2">{t.inputTitle}</h2>
-                <div className="flex gap-2 mb-4 flex-wrap">
-                    <button onClick={() => fileInputRef.current.click()} className="bg-gray-700 text-white px-5 py-2 rounded hover:bg-gray-800 transition">
+            <section className="mb-10 mt-6" aria-label="Upload CSV or Excel">
+                <h2 className="text-lg font-semibold mb-2">{t.inputTitle}</h2>
+                <div className="flex flex-wrap gap-2 mb-4">
+                    <button onClick={() => fileInputRef.current.click()} className="bg-gray-700 text-white px-5 py-2 rounded hover:bg-gray-800">
                         {t.uploadBtn}
                     </button>
                     <input ref={fileInputRef} type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" className="hidden" onChange={handleFileUpload} />
                     {uploadJson && (
-                        <button onClick={handleCopyToClipboard} className="bg-yellow-500 text-white px-5 py-2 rounded hover:bg-yellow-600 transition">
+                        <button onClick={handleCopyToClipboard} className="bg-yellow-500 text-white px-5 py-2 rounded hover:bg-yellow-600">
                             {t.copyBtn}
                         </button>
                     )}
@@ -195,30 +196,30 @@ export default function Converter() {
                 )}
 
                 {uploadJson && (
-                    <div className="overflow-auto border p-4 rounded bg-gray-50 shadow-inner">
+                    <div className="overflow-auto border p-4 rounded bg-gray-50 shadow-inner max-h-[400px]">
                         <pre className="text-xs whitespace-pre-wrap">{JSON.stringify(uploadJson, null, 2)}</pre>
                     </div>
                 )}
             </section>
 
-            <section>
-                <h2 className="text-xl font-semibold mb-2">{t.outputTitle}</h2>
+            <section aria-label="Convert JSON to CSV or Excel">
+                <h2 className="text-lg font-semibold mb-2">{t.outputTitle}</h2>
                 <textarea
-                    className="w-full h-56 p-4 border rounded mb-4 font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full h-56 p-4 border rounded font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
                     placeholder={t.placeholder}
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
                 />
-                <div className="flex gap-2 mb-4 flex-wrap">
-                    <button onClick={handleJsonInput} className="bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-600 transition">
+                <div className="flex flex-wrap gap-2 mt-4">
+                    <button onClick={handleJsonInput} className="bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-600">
                         {t.parseBtn}
                     </button>
                     {jsonData && (
                         <>
-                            <button onClick={handleDownloadCSV} className="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700 transition">
+                            <button onClick={handleDownloadCSV} className="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700">
                                 {t.toCsvBtn}
                             </button>
-                            <button onClick={handleDownloadExcel} className="bg-purple-600 text-white px-5 py-2 rounded hover:bg-purple-700 transition">
+                            <button onClick={handleDownloadExcel} className="bg-purple-600 text-white px-5 py-2 rounded hover:bg-purple-700">
                                 {t.toExcelBtn}
                             </button>
                         </>
@@ -226,7 +227,41 @@ export default function Converter() {
                 </div>
             </section>
 
-            {error && <p className="text-red-500 font-medium mt-4">{error}</p>}
+            {error && <p className="text-red-500 font-medium mt-6">{error}</p>}
+
+            {/* ✅ 변환 예제 섹션 */}
+            <section className="mt-12 bg-white p-6 rounded shadow-md" aria-label="Conversion Example">
+                <h2 className="text-xl font-bold mb-2 text-gray-800">Example: Convert JSON to CSV</h2>
+                <p className="text-sm text-gray-700 mb-4">Here's a simple JSON array and how it looks when converted to CSV.</p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                        <h3 className="font-semibold mb-1">Input JSON</h3>
+                        <pre className="bg-gray-100 border rounded p-3 overflow-auto">
+                            {`[
+  {
+    "name": "Alice",
+    "age": 30,
+    "email": "alice@example.com"
+  },
+  {
+    "name": "Bob",
+    "age": 25,
+    "email": "bob@example.com"
+  }
+]`}
+                        </pre>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold mb-1">Output CSV</h3>
+                        <pre className="bg-gray-100 border rounded p-3 overflow-auto">
+                            {`name,age,email
+Alice,30,alice@example.com
+Bob,25,bob@example.com`}
+                        </pre>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 }
