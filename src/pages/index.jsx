@@ -18,8 +18,9 @@ export default function Home() {
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:locale:alternate" content="ko_KR" />
                 <meta name="author" content="choman150" />
-                <link rel="canonical" href="https://json-converter.choman150.com/" />
+                <link rel="canonical" href="https://choman150.click" />
                 <link rel="icon" href="/favicon.ico" />
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7141076584440289" crossorigin="anonymous"></script>
             </Head>
             <main className="p-6 max-w-5xl mx-auto" role="main">
                 {/* <div id="ad-slot-top" className="mb-6 w-full flex justify-center">
