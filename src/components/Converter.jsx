@@ -76,7 +76,8 @@ export default function Converter() {
 
     const handleDownloadCSV = () => {
         if (!jsonData) return;
-        const flattened = jsonData.map(flattenObject);
+        const array = Array.isArray(jsonData) ? jsonData : [jsonData];
+        const flattened = array.map((row) => flattenObject(row));
         const csv = Papa.unparse(flattened);
         const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
         saveAs(blob, "converted.csv");
@@ -84,7 +85,8 @@ export default function Converter() {
 
     const handleDownloadExcel = () => {
         if (!jsonData) return;
-        const flattened = jsonData.map(flattenObject);
+        const array = Array.isArray(jsonData) ? jsonData : [jsonData];
+        const flattened = array.map((row) => flattenObject(row));
         const worksheet = XLSX.utils.json_to_sheet(flattened);
         const book = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(book, worksheet, "Sheet1");
@@ -108,14 +110,16 @@ export default function Converter() {
         const fileName = file.name.toLowerCase();
 
         reader.onload = (event) => {
+            const content = event.target.result;
+
             try {
                 let parsed;
                 if (fileName.endsWith(".csv")) {
-                    const result = Papa.parse(event.target.result, { header: true });
+                    const result = Papa.parse(content, { header: true });
                     parsed = result.data;
                     setUploadJson(parsed);
                 } else if (fileName.endsWith(".xlsx")) {
-                    const wb = XLSX.read(event.target.result, { type: "binary" });
+                    const wb = XLSX.read(content, { type: "binary" });
                     setWorkbook(wb);
                     setSheetNames(wb.SheetNames);
                     const firstSheet = wb.Sheets[wb.SheetNames[0]];
@@ -124,8 +128,9 @@ export default function Converter() {
                 } else {
                     throw new Error("Unsupported file type");
                 }
+
                 setError("");
-            } catch {
+            } catch (err) {
                 setError(t.error);
                 setUploadJson(null);
                 setWorkbook(null);
