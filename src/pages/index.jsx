@@ -1,6 +1,7 @@
 // pages/index.tsx
 import Head from "next/head";
 import Converter from "../components/Converter";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
     return (
@@ -46,6 +47,7 @@ export default function Home() {
                     </div>
                 </footer>
             </main>
+            <Analytics />
         </>
     );
 }
