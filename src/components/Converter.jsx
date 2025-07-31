@@ -158,10 +158,10 @@ export default function Converter() {
         <div className="p-6 max-w-5xl mx-auto">
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-2xl md:text-3xl font-bold text-gray-800">{t.title}</h1>
-                <select className="border rounded px-2 py-1 text-sm" value={lang} onChange={(e) => setLang(e.target.value)}>
+                {/* <select className="border rounded px-2 py-1 text-sm" value={lang} onChange={(e) => setLang(e.target.value)}>
                     <option value="ko">🇰🇷 한국어</option>
                     <option value="en">🇺🇸 English</option>
-                </select>
+                </select> */}
             </div>
 
             {/* 사용 목적 설명 */}
@@ -233,40 +233,6 @@ export default function Converter() {
             </section>
 
             {error && <p className="text-red-500 font-medium mt-6">{error}</p>}
-
-            {/* ✅ 변환 예제 섹션 */}
-            <section className="mt-12 bg-white p-6 rounded shadow-md" aria-label="Conversion Example">
-                <h2 className="text-xl font-bold mb-2 text-gray-800">Example: Convert JSON to CSV</h2>
-                <p className="text-sm text-gray-700 mb-4">Here's a simple JSON array and how it looks when converted to CSV.</p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div>
-                        <h3 className="font-semibold mb-1">Input JSON</h3>
-                        <pre className="bg-gray-100 border rounded p-3 overflow-auto">
-                            {`[
-  {
-    "name": "Alice",
-    "age": 30,
-    "email": "alice@example.com"
-  },
-  {
-    "name": "Bob",
-    "age": 25,
-    "email": "bob@example.com"
-  }
-]`}
-                        </pre>
-                    </div>
-                    <div>
-                        <h3 className="font-semibold mb-1">Output CSV</h3>
-                        <pre className="bg-gray-100 border rounded p-3 overflow-auto">
-                            {`name,age,email
-Alice,30,alice@example.com
-Bob,25,bob@example.com`}
-                        </pre>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 }
