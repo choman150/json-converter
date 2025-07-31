@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /privacy-policy
-Disallow: /contact
 
 Sitemap: https://choman150.click/sitemap.xml
