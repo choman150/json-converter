@@ -2,6 +2,7 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 
@@ -32,6 +33,7 @@ export default function App({ Component, pageProps }) {
                 <Footer />
             </main>
             <Analytics />
+            <SpeedInsights />
         </>
     );
 }
