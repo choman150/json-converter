@@ -7,10 +7,11 @@ export default function FlatteningJson() {
 
             <section className="prose max-w-none text-gray-800">
                 <p>
-                    JSON is often used to represent structured, nested data in APIs, configurations, and logs. However, formats like CSV and Excel require flat, tabular structures with simple
-                    key-value mappings. This is where <strong>flattening</strong> comes in — the process of converting deeply nested objects into dot-notation paths (e.g., <code>user.name</code>,{" "}
-                    <code>user.email</code>).
+                    JSON is widely used to represent structured, nested data in APIs, configurations, and logs. In contrast, formats like CSV and Excel require flat, tabular structures with simple
+                    key-value mappings.
+                    <strong>Flattening</strong> refers to the process of converting deeply nested objects into dot-notation paths (e.g., <code>user.name</code>, <code>user.email</code>).
                 </p>
+                <br />
 
                 <h2>Why Flatten JSON?</h2>
                 <ul>
@@ -19,7 +20,7 @@ export default function FlatteningJson() {
                     <li>🛠️ Facilitates importing into relational databases</li>
                     <li>📁 Makes data readable and mappable for spreadsheets</li>
                 </ul>
-
+                <br />
                 <h2>Example: Before and After Flattening</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
                     <div>
@@ -49,10 +50,10 @@ export default function FlatteningJson() {
                         </pre>
                     </div>
                 </div>
-
+                <br />
                 <h2>How It Works in This Tool</h2>
-                <p>When you convert JSON to CSV or Excel using this tool, nested fields are automatically flattened. This ensures that each row and column remains consistent and parseable.</p>
-
+                <p> When you convert JSON to CSV or Excel using this tool, nested fields are automatically flattened. This ensures that each row and column remains consistent and easy to parse.</p>
+                <br />
                 <h2>Try It Yourself</h2>
                 <p>
                     👉 Use our <Link href="/">converter</Link> and test with nested JSON to see flattening in action.

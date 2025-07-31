@@ -11,16 +11,16 @@ export default function Home() {
             <section className="mt-12 bg-white rounded-lg shadow p-6">
                 <h2 className="text-xl font-bold text-gray-800 mb-4">📚 Example Use Case</h2>
                 <p className="text-sm text-gray-700 mb-2">
-                    Imagine you receive a CSV file from a colleague containing product information. To import it into your web application, you need to convert it into JSON. Or perhaps you want to
-                    download filtered data from your frontend in Excel format for reporting.
+                    Imagine receiving a CSV file from a colleague with product details. To import the data into your web application, you'll need to convert it to JSON. Or maybe you want to export
+                    filtered data from your frontend in Excel format for reporting purposes.
                 </p>
-                <p className="text-sm text-gray-700">This tool streamlines that process and ensures your data is transformed correctly every time.</p>
+                <p className="text-sm text-gray-700">This tool simplifies the process and ensures accurate, reliable conversions every time.</p>
             </section>
 
             {/* ✅ 변환 예제 섹션 */}
             <section className="mt-12 bg-white p-6 rounded shadow-md" aria-label="Conversion Example">
                 <h2 className="text-xl font-bold mb-2 text-gray-800">✅ Example: Convert JSON to CSV</h2>
-                <p className="text-sm text-gray-700 mb-4">Here's a simple JSON array and how it looks when converted to CSV.</p>
+                <p className="text-sm text-gray-700 mb-4">Below is a basic JSON array and how it appears when converted into CSV format.</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                     <div>
