@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+CSV ↔ Excel ↔ JSON Converter
+Convert CSV, Excel, and JSON easily in your browser—no installation required.
 
-## Getting Started
+🔧 Overview
+choman150.click is a fast, intuitive web-based converter for working with tabular data and JSON formats. Built for developers, data analysts, and anyone needing to transform data without clutter:
 
-First, run the development server:
+Upload CSV or Excel (.xlsx) to convert to JSON
+
+Paste JSON to export as CSV or Excel
+
+Supports flattening nested JSON into dot-notation compatible with spreadsheet columns (e.g. user.name)
+
+✅ Features
+Instant format conversion (CSV ⇄ Excel ⇄ JSON) directly in-browser
+
+Nested JSON flattening for easy spreadsheet mapping
+
+Sheet selection support for multi-sheet Excel files
+
+Copy-ready output for easy integration into IDEs or apps
+
+Lightweight, responsive, no back-end dependencies
+
+🧪 Example Use Case
+Convert a basic JSON array into CSV:
+
+Input JSON
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+[
+  {
+    "name": "Alice",
+    "age": 30,
+    "email": "alice@example.com"
+  },
+  {
+    "name": "Bob",
+    "age": 25,
+    "email": "bob@example.com"
+  }
+]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Output CSV
 
-You can start editing the page by modifying `pages/index.jsx`. The page auto-updates as you edit the file.
+```bash
+name,age,email
+Alice,30,alice@example.com
+Bob,25,bob@example.com
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📚 Why It Matters
+CSV, Excel, and JSON are core data formats in web development, reporting, machine learning, and APIs. This tool bridges between:
 
-## Learn More
+JSON: Ideal for API response and hierarchical data
 
-To learn more about Next.js, take a look at the following resources:
+CSV / Excel: Preferred for flat, tabular data and spreadsheets
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+It’s perfect for quick transformation—no software installs, no sign‑up, no hassle.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🛠 Installation & Usage
+No installation needed. Simply visit choman150.click and:
 
-## Deploy on Vercel
+Upload your CSV or Excel file—or paste your JSON
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Choose conversion direction
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Click “Convert”
+
+Copy or download the result
+
+📘 Support & FAQ
+For guidance, troubleshooting tips, and updates, visit the About, How To, or FAQ sections on the website.
+
+⚖️ Licensing
+© 2025 choman150. All rights reserved.
+
+🚀 Help Improve the Tool
+Feedback, suggestions, and contributions are welcome! Reach out via the Contact page or send pull requests with improvements or new features.

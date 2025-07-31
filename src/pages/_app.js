@@ -9,11 +9,11 @@ export default function App({ Component, pageProps }) {
     return (
         <>
             <Head>
-                <title>CSV or Excel to JSON Converter</title>
+                <title>CSV or Excel to JSON Converter – Free Online Tool</title>
                 <meta name="description" content="Convert CSV or Excel files to JSON and vice versa. Upload your file or paste your JSON and download it as CSV or Excel." />
                 <meta
                     name="keywords"
-                    content="CSV to JSON, Excel to JSON, JSON to CSV, JSON to Excel, convert CSV, convert Excel, CSV 변환기, JSON 변환기, 엑셀 JSON 변환, data transformation tool, data converter online, spreadsheet to JSON, tabular data conversion, Excel sheet to JSON, CSV export tool"
+                    content="CSV to JSON, Excel to JSON, JSON to CSV, JSON to Excel, convert CSV, convert Excel, CSV 변환기, JSON 변환기, 엑셀 JSON 변환, data transformation tool, data converter online, spreadsheet to JSON, tabular data conversion, Excel sheet to JSON, CSV export tool, csv to json converter tool, csv to json online, convert csv to json,csv to json converter with headers,convert csv with semicolon to json,csv to json with multiple sheets,csv to json without quotes,csv to nested json converter"
                 />
                 <meta property="og:title" content="CSV to JSON Converter" />
                 <meta property="og:description" content="Easily convert CSV, Excel, and JSON data. Fast and user-friendly." />
