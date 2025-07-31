@@ -2,7 +2,6 @@
 <urlset 
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
   <!-- 홈 -->
   <url>
     <loc>https://choman150.click/</loc>
@@ -10,7 +9,6 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-
   <!-- About 페이지 -->
   <url>
     <loc>https://choman150.click/about</loc>
@@ -18,7 +16,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <!-- Privacy Policy -->
   <url>
     <loc>https://choman150.click/privacy-policy</loc>
@@ -26,7 +23,6 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
   <!-- Contact -->
   <url>
     <loc>https://choman150.click/contact</loc>
@@ -34,7 +30,6 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
   <!-- How To -->
   <url>
     <loc>https://choman150.click/how-to</loc>
@@ -42,7 +37,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <!-- FAQ -->
   <url>
     <loc>https://choman150.click/faq</loc>
@@ -50,7 +44,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <!--  JSON Flattening -->
   <url>
     <loc>https://choman150.click/flattening-json</loc>
@@ -58,5 +51,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
 </urlset>
