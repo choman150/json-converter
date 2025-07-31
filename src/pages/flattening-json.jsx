@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function FlatteningJson() {
     return (
         <>
-            <h1 className="text-3xl font-bold text-gray-800 mb-6">🧩 Flattening Nested JSON for CSV or Excel Export</h1>
+            <h1 className="text-3xl font-bold text-gray-800 mb-6">🧾 Flattening Nested JSON for CSV or Excel Export</h1>
 
             <section className="prose max-w-none text-gray-800">
                 <p>
