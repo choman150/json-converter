@@ -1,58 +1,39 @@
 export default function FAQ() {
     return (
         <>
-            <h1 className="text-3xl font-bold mb-6">Frequently Asked Questions</h1>
+            <h1 className="text-2xl font-bold text-gray-800 mb-4">❓ Frequently Asked Questions</h1>
 
-            <div className="space-y-6 text-gray-700">
-                <div>
-                    <h2 className="font-semibold text-lg">📂 What file types are supported?</h2>
-                    <p>
-                        We support CSV (<code>.csv</code>) and Excel (<code>.xlsx</code>) file formats for upload.
-                    </p>
-                </div>
+            <section className="mb-8">
+                <h2 className="text-lg font-semibold mb-1">What file types are supported?</h2>
+                <p className="text-gray-700">We support CSV (.csv) and Excel (.xlsx) formats for upload, and allow exporting to CSV and Excel from JSON data.</p>
+            </section>
 
-                <div>
-                    <h2 className="font-semibold text-lg">📏 Is there a file size limit?</h2>
-                    <p>We recommend uploading files under 2MB for best performance. Very large files may take longer to parse or crash on low-memory devices.</p>
-                </div>
+            <section className="mb-8">
+                <h2 className="text-lg font-semibold mb-1">Is there a file size limit?</h2>
+                <p className="text-gray-700">There is no strict file size limit, but very large files may affect performance in the browser depending on your device capabilities.</p>
+            </section>
 
-                <div>
-                    <h2 className="font-semibold text-lg">🔐 Is my data safe?</h2>
-                    <p>Yes. All processing is done client-side in your browser. We never store or send your data anywhere.</p>
-                </div>
+            <section className="mb-8">
+                <h2 className="text-lg font-semibold mb-1">Can I convert nested JSON to CSV?</h2>
+                <p className="text-gray-700">
+                    Yes! Nested JSON will be flattened using dot notation (e.g., <code>user.name</code>) so each field maps cleanly to CSV columns.
+                </p>
+            </section>
 
-                <div>
-                    <h2 className="font-semibold text-lg">💡 Can I convert JSON with nested objects?</h2>
-                    <p>Yes! Our tool flattens nested structures into dot notation for CSV/Excel output.</p>
-                </div>
+            <section className="mb-8">
+                <h2 className="text-lg font-semibold mb-1">Does it work offline?</h2>
+                <p className="text-gray-700">No, the tool runs in the browser but requires an internet connection to load the UI and conversion libraries.</p>
+            </section>
 
-                <div>
-                    <h2 className="font-semibold text-lg">❓ I see an error. What should I do?</h2>
-                    <p>Make sure your input is valid JSON or a properly formatted spreadsheet. If the problem persists, please contact us via the Contact page.</p>
-                </div>
+            <section className="mb-8">
+                <h2 className="text-lg font-semibold mb-1">Is my data secure?</h2>
+                <p className="text-gray-700">Yes. All conversions happen on your browser. No data is uploaded to a server or stored anywhere.</p>
+            </section>
 
-                <div>
-                    <h2 className="font-semibold text-lg">📤 Can I convert large datasets?</h2>
-                    <p>You can, but performance depends on your device’s browser memory. Try breaking up large files into smaller chunks if needed.</p>
-                </div>
-
-                <div>
-                    <h2 className="font-semibold text-lg">🧾 What is flattening in JSON to CSV?</h2>
-                    <p>
-                        Flattening converts nested JSON keys like <code>{`{"user": {"name": "Alice"}}`}</code> into dot notation <code>user.name</code> for compatibility with CSV columns.
-                    </p>
-                </div>
-
-                <div>
-                    <h2 className="font-semibold text-lg">🌐 Can I use this tool offline?</h2>
-                    <p>No, but since it's a client-side tool, network usage is minimal. Offline support may be added in the future.</p>
-                </div>
-
-                <div>
-                    <h2 className="font-semibold text-lg">🔄 Can I revert flattened CSV back to nested JSON?</h2>
-                    <p>Currently, the tool only flattens JSON for CSV/Excel conversion. Reverse nesting is not supported at the moment.</p>
-                </div>
-            </div>
+            <section className="mb-8">
+                <h2 className="text-lg font-semibold mb-1">Can I use it on mobile?</h2>
+                <p className="text-gray-700">Yes! The site is responsive and optimized for mobile and tablet usage.</p>
+            </section>
         </>
     );
 }

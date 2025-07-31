@@ -3,16 +3,19 @@
 export default function AboutCsvJson() {
     return (
         <>
-            <h1 className="text-3xl font-bold mb-4">About CSV and JSON</h1>
+            <h1 className="text-2xl font-bold text-gray-800 mb-4">📘 About This Tool</h1>
             <p className="text-gray-700 mb-4">
-                CSV (Comma-Separated Values) and JSON (JavaScript Object Notation) are two of the most common data formats used in the modern web. CSV is best for flat, table-like data such as
-                spreadsheets and is easily opened in Excel or Google Sheets. JSON is structured, hierarchical, and more suitable for APIs and programming interfaces.
+                This tool was created to simplify the conversion of structured data between CSV, Excel, and JSON formats. Whether you're a developer, data analyst, educator, or marketer, this tool
+                enables quick transformations without needing to install any software.
             </p>
             <p className="text-gray-700 mb-4">
-                Converting between CSV and JSON allows you to bridge the gap between human-readable spreadsheet data and machine-readable application data. Developers often receive CSVs from
-                non-technical stakeholders and need to convert them into JSON for backend services or frontend applications.
+                It was built using modern web technologies (React, Next.js) and is designed to be lightweight, responsive, and privacy-respecting — no data is ever uploaded to a server.
             </p>
-            <p className="text-gray-700">Our converter simplifies this process and ensures your data stays clean, structured, and ready for use across platforms.</p>
+            <p className="text-gray-700 mb-4">
+                Common users include those importing or exporting data from admin dashboards, generating Excel reports from frontend apps, or viewing deeply nested JSON results from APIs in a cleaner
+                format.
+            </p>
+            <p className="text-gray-700">Contributions or suggestions are welcome via the contact page. We believe in empowering data accessibility and transparency.</p>
         </>
     );
 }

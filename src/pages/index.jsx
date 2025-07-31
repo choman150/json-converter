@@ -56,16 +56,22 @@ Bob,25,bob@example.com`}
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">📘 Understanding CSV, JSON, and Excel</h2>
                 <p>
                     CSV (Comma-Separated Values), Excel (.xlsx), and JSON (JavaScript Object Notation) are the most commonly used data formats in web development, data analysis, and reporting. This
-                    tool helps you convert between them easily without installing anything.
+                    tool helps you convert between them easily without installing anything. Whether you're handling e-commerce data, IoT device logs, API responses, or Excel reports, converting
+                    formats is often the first step.
                 </p>
                 <p>
                     JSON is popular for API data responses and hierarchical structures, while CSV and Excel are better suited for flat tabular data and human-friendly spreadsheets. Our tool bridges
-                    that gap.
+                    that gap with precision and reliability.
+                </p>
+                <p>
+                    You can upload files in .csv or .xlsx format and immediately see their JSON structure. Conversely, paste raw JSON and export it into clean CSV or Excel files. This flexibility
+                    saves time and reduces manual formatting errors.
                 </p>
                 <p>
                     It also supports advanced features like sheet selection from Excel workbooks, copying results, and flattening deeply nested JSON objects into dot notation (e.g.{" "}
-                    <code>user.name</code>) — a crucial step for compatibility with spreadsheet columns.
+                    <code>user.name</code>) — a crucial step for compatibility with spreadsheet columns and database imports.
                 </p>
+                <p>Common use cases include data migration, front-end reporting tools, automated ETL workflows, or even preparing structured data for machine learning preprocessing.</p>
                 <p>
                     Curious how JSON flattening works? 👉{" "}
                     <Link href="/flattening-json" className="text-blue-600 underline">
