@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+export default function handler(req, res) {
+    res.setHeader("Content-Type", "application/xml");
+    res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    res.status(200).send(`<?xml version="1.0" encoding="UTF-8"?>
 <urlset 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:xhtml="http://www.w3.org/1999/xhtml"
@@ -48,3 +51,5 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     <priority>0.6</priority>
   </url>
 </urlset>
+`);
+}
