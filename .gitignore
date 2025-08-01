@@ -15,7 +15,9 @@
 
 # next.js
 /.next/
-#/out/
+
+## 정적 페이지 필요할땐 아래 주석
+/out/
 
 # production
 /build

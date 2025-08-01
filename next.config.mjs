@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "export", // Netlify는 정적 HTML만 필요
+    //    output: "export", // Netlify는 정적 HTML만 필요
     async headers() {
         return [
             {
