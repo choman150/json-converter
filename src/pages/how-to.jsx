@@ -1,45 +1,39 @@
-import Head from "next/head";
-import Link from "next/link";
-import Menu from "../components/Menu";
-import Footer from "../components/Footer";
 
 export default function HowTo() {
-    return (
-        <>
-            <h1 className="text-2xl font-bold text-gray-800 mb-4">🛠️ How to Use</h1>
+  return (
+    <div className="max-w-3xl mx-auto p-6 bg-white rounded shadow">
+      <h1 className="text-2xl font-bold mb-4">🛠️ How to Use This Converter</h1>
 
-            <section className="text-gray-700 mb-6">
-                <h2 className="text-xl font-semibold mb-2">1. Convert CSV or Excel to JSON</h2>
-                <ul className="list-disc list-inside">
-                    <li>
-                        Click the upload button to select a <code>.csv</code> or <code>.xlsx</code> file from your computer.
-                    </li>
-                    <li>The file will be instantly parsed and displayed as formatted JSON.</li>
-                    <li>Click the "Copy JSON" button to copy the result to your clipboard for further use.</li>
-                </ul>
-            </section>
+      <ol className="list-decimal pl-5 space-y-4 text-sm text-gray-700">
+        <li>
+          <strong>Select a File:</strong> Upload your CSV or Excel file using the "Upload" button. You can also paste JSON text into the editor.
+        </li>
+        <li>
+          <strong>Preview or Edit:</strong> Review the uploaded data. If you're converting JSON, you can edit the text directly before converting.
+        </li>
+        <li>
+          <strong>Choose an Output Format:</strong> Click "Download CSV" or "Download Excel" for JSON → Table format. Use "Parse JSON" for CSV → JSON.
+        </li>
+        <li>
+          <strong>Copy or Download:</strong> Copy the JSON result using the "Copy JSON" button or download it as a file.
+        </li>
+        <li>
+          <strong>Multiple Sheets:</strong> If uploading Excel with multiple sheets, select the desired one from the dropdown.
+        </li>
+      </ol>
 
-            <section className="text-gray-700 mb-6">
-                <h2 className="text-xl font-semibold mb-2">2. Convert JSON to CSV or Excel</h2>
-                <ul className="list-disc list-inside">
-                    <li>Paste your JSON data into the provided text area.</li>
-                    <li>Click "Parse JSON" to validate and preview the content.</li>
-                    <li>
-                        Once validated, export the data as a <code>.csv</code> or <code>.xlsx</code> file using the download buttons.
-                    </li>
-                </ul>
-            </section>
-
-            <section className="text-gray-700">
-                <h2 className="text-xl font-semibold mb-2">Tips</h2>
-                <ul className="list-disc list-inside">
-                    <li>
-                        For cleaner and more predictable output, use flattened JSON (e.g., <code>{`{"user.name": "Alice"}`}</code>).
-                    </li>
-                    <li>If your Excel file contains multiple sheets, you can select which sheet to convert.</li>
-                    <li>For complex or deeply nested JSON, consider using a validator to ensure correct formatting before converting.</li>
-                </ul>
-            </section>
-        </>
-    );
+      <div className="mt-8">
+        <h2 className="text-xl font-semibold mb-2">📋 Example Workflow</h2>
+        <p className="text-sm text-gray-700 mb-2">
+          1. A marketing team exports customer survey results in Excel format.
+        </p>
+        <p className="text-sm text-gray-700 mb-2">
+          2. They use this converter to turn the data into JSON to upload into an analytics platform.
+        </p>
+        <p className="text-sm text-gray-700">
+          3. Later, they use the same tool to convert filtered JSON results back into a CSV report.
+        </p>
+      </div>
+    </div>
+  );
 }
