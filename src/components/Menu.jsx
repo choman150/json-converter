@@ -1,17 +1,18 @@
 import Link from "next/link";
-import Script from "next/script";
 
 export default function Menu() {
     return (
         <>
             <div id="ezoic-pub-ad-placeholder-118"></div>
-            <Script>
-                {`
-    ezstandalone.cmd.push(function () {
-        ezstandalone.showAds(118);
-    });
-    `}
-            </Script>
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
+          ezstandalone.cmd.push(function() {
+            ezstandalone.showAds(118);
+          });
+        `,
+                }}
+            />
 
             <nav className="mb-8 bg-gray-100 rounded px-4 py-3 shadow flex gap-6 text-sm font-medium text-blue-700 justify-center">
                 <Link href="/" className="hover:underline hover:text-blue-900">

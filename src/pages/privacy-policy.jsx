@@ -19,6 +19,7 @@ export default function PrivacyPolicy() {
             </p>
 
             <p className="mt-8 text-sm text-gray-500">This policy was last updated on {new Date("2025-07-31").toLocaleDateString()}</p>
+            <span id="ezoic-privacy-policy-embed"></span>
         </>
     );
 }
