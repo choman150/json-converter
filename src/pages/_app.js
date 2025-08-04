@@ -25,16 +25,16 @@ export default function App({ Component, pageProps }) {
                 <meta name="author" content="choman150" />
                 <link rel="canonical" href="https://choman150.click" />
                 <link rel="icon" href="/favicon.ico" />
-                <Script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false" strategy="beforeInteractive" />
-                <Script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false" strategy="beforeInteractive" />
-                <Script src="//www.ezojs.com/ezoic/sa.min.js" strategy="beforeInteractive" />
-                <Script id="ez-init" strategy="beforeInteractive">
-                    {`
+            </Head>
+            <Script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false" strategy="beforeInteractive" />
+            <Script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false" strategy="beforeInteractive" />
+            <Script src="//www.ezojs.com/ezoic/sa.min.js" strategy="beforeInteractive" />
+            <Script id="ez-init" strategy="beforeInteractive">
+                {`
           window.ezstandalone = window.ezstandalone || {};
           ezstandalone.cmd = ezstandalone.cmd || [];
         `}
-                </Script>
-            </Head>
+            </Script>
             <main className="p-6 max-w-5xl mx-auto" role="main">
                 <Menu />
 
