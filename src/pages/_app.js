@@ -1,4 +1,5 @@
 // pages/_app.js
+import Script from "next/script";
 import "../styles/globals.css";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/next";
@@ -22,9 +23,17 @@ export default function App({ Component, pageProps }) {
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:locale:alternate" content="ko_KR" />
                 <meta name="author" content="choman150" />
-                <meta name="google-adsense-account" content="ca-pub-7141076584440289" />
                 <link rel="canonical" href="https://choman150.click" />
                 <link rel="icon" href="/favicon.ico" />
+                <Script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false" strategy="beforeInteractive" />
+                <Script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false" strategy="beforeInteractive" />
+                <Script src="//www.ezojs.com/ezoic/sa.min.js" strategy="beforeInteractive" />
+                <Script id="ez-init" strategy="beforeInteractive">
+                    {`
+          window.ezstandalone = window.ezstandalone || {};
+          ezstandalone.cmd = ezstandalone.cmd || [];
+        `}
+                </Script>
             </Head>
             <main className="p-6 max-w-5xl mx-auto" role="main">
                 <Menu />
