@@ -23,7 +23,6 @@ export default function App({ Component, pageProps }) {
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:locale:alternate" content="ko_KR" />
                 <meta name="author" content="choman150" />
-                <link rel="canonical" href="https://choman150.click" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false" strategy="beforeInteractive" />
