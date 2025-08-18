@@ -232,6 +232,7 @@ export default function Converter() {
             </section>
 
             {error && <p className="text-red-500 font-medium mt-6">{error}</p>}
+            {/* 테스트 */}
         </div>
     );
 }
