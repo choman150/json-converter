@@ -27,11 +27,13 @@ export default function App({ Component, pageProps }) {
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="monetag" content="ca8f15006cbbacfd5946ee303eb736ce" />
             </Head>
+            <Script src="https://fpyf8.com/88/tag.min.js" data-zone="164319" async data-cfasync="false" />
+
             <main className="p-6 max-w-5xl mx-auto" role="main">
                 <Menu />
 
                 <Component {...pageProps} />
-                <Script src="https://fpyf8.com/88/tag.min.js" strategy="afterInteractive" data-zone="164319" data-cfasync="false" />
+
                 <Footer />
             </main>
             <Analytics />
