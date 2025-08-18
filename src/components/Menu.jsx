@@ -3,17 +3,6 @@ import Link from "next/link";
 export default function Menu() {
     return (
         <>
-            <div id="ezoic-pub-ad-placeholder-118"></div>
-            <script
-                dangerouslySetInnerHTML={{
-                    __html: `
-          ezstandalone.cmd.push(function() {
-            ezstandalone.showAds(118);
-          });
-        `,
-                }}
-            />
-
             <nav className="mb-8 bg-gray-100 rounded px-4 py-3 shadow flex gap-6 text-sm font-medium text-blue-700 justify-center">
                 <Link href="/" className="hover:underline hover:text-blue-900">
                     🏠 Home

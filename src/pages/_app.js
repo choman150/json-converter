@@ -25,15 +25,7 @@ export default function App({ Component, pageProps }) {
                 <meta name="author" content="choman150" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false" strategy="beforeInteractive" />
-            <Script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false" strategy="beforeInteractive" />
-            <Script src="//www.ezojs.com/ezoic/sa.min.js" strategy="beforeInteractive" />
-            <Script id="ez-init" strategy="beforeInteractive">
-                {`
-          window.ezstandalone = window.ezstandalone || {};
-          ezstandalone.cmd = ezstandalone.cmd || [];
-        `}
-            </Script>
+            <meta name="monetag" content="ca8f15006cbbacfd5946ee303eb736ce" />
             <main className="p-6 max-w-5xl mx-auto" role="main">
                 <Menu />
 

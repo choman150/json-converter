@@ -172,18 +172,6 @@ export default function Converter() {
                     quickly without installing any software. Whether you’re uploading a spreadsheet or pasting raw JSON, our converter will handle it instantly.
                 </p>
             </section>
-
-            <div id="ezoic-pub-ad-placeholder-120"></div>
-            <script
-                dangerouslySetInnerHTML={{
-                    __html: `
-          ezstandalone.cmd.push(function() {
-            ezstandalone.showAds(120);
-          });
-        `,
-                }}
-            />
-
             <section className="mb-10 mt-6" aria-label="Upload CSV or Excel">
                 <h2 className="text-lg font-semibold mb-2">{t.inputTitle}</h2>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -218,17 +206,6 @@ export default function Converter() {
                 )}
             </section>
 
-            <div id="ezoic-pub-ad-placeholder-121"></div>
-            <script
-                dangerouslySetInnerHTML={{
-                    __html: `
-          ezstandalone.cmd.push(function() {
-            ezstandalone.showAds(121);
-          });
-        `,
-                }}
-            />
-
             <section aria-label="Convert JSON to CSV or Excel">
                 <h2 className="text-lg font-semibold mb-2">{t.outputTitle}</h2>
                 <textarea
@@ -255,17 +232,6 @@ export default function Converter() {
             </section>
 
             {error && <p className="text-red-500 font-medium mt-6">{error}</p>}
-
-            <div id="ezoic-pub-ad-placeholder-122"></div>
-            <script
-                dangerouslySetInnerHTML={{
-                    __html: `
-          ezstandalone.cmd.push(function() {
-            ezstandalone.showAds(122);
-          });
-        `,
-                }}
-            />
         </div>
     );
 }
