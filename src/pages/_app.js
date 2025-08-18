@@ -1,5 +1,4 @@
 // pages/_app.js
-import Script from "next/script";
 import "../styles/globals.css";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/next";
@@ -27,19 +26,9 @@ export default function App({ Component, pageProps }) {
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="monetag" content="ca8f15006cbbacfd5946ee303eb736ce" />
             </Head>
-            {/* <Script src="https://fpyf8.com/88/tag.min.js" data-zone="164319" async data-cfasync="false" /> */}
-            <Script
-                src="/sw.js" // public/에 둔 파일
-                strategy="afterInteractive" // 바디 끝에서 로드
-                data-zone="164319" // 필요 시 제공 문서대로 속성 유지
-                data-cfasync="false"
-            />
-
             <main className="p-6 max-w-5xl mx-auto" role="main">
                 <Menu />
-
                 <Component {...pageProps} />
-
                 <Footer />
             </main>
             <Analytics />
