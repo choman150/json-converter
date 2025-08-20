@@ -24,6 +24,7 @@ export default function Document() {
                 <meta property="og:locale:alternate" content="ko_KR" />
                 <meta name="author" content="choman150" />
                 <link rel="icon" href="/favicon.ico" />
+                <link rel="canonical" href="https://choman150.click" />
                 <meta name="monetag" content="ca8f15006cbbacfd5946ee303eb736ce" />
                 <script
                     dangerouslySetInnerHTML={{
