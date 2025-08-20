@@ -2,8 +2,6 @@
 
 Convert CSV, Excel, and JSON easily in your browser—no installation required.
 
-Visit https://choman150.click
-
 ### 🔧 Overview
 
 choman150.click is a fast, intuitive web-based converter for working with tabular data and JSON formats. Built for developers, data analysts, and anyone needing to transform data without clutter:
@@ -13,6 +11,10 @@ Upload CSV or Excel (.xlsx) to convert to JSON
 Paste JSON to export as CSV or Excel
 
 Supports flattening nested JSON into dot-notation compatible with spreadsheet columns (e.g. user.name)
+
+## 🚀 Live Demo
+
+👉 [https://choman150.click](https://choman150.click)
 
 ### ✅ Features
 
