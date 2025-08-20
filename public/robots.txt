@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://choman150.click/sitemap.xml
-Sitemap: https://choman150.click/api/sitemap
+Sitemap: https://csvtojson.choman150.click/sitemap.xml
+Sitemap: https://csvtojson.choman150.click/api/sitemap
 Sitemap: http://sitemap.choman150.click/sitemap_csvtojson.xml
