@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import Papa from "papaparse";
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
+import Script from "next/script";
 
 const messages = {
     en: {
@@ -205,6 +206,9 @@ export default function Converter() {
                     </div>
                 )}
             </section>
+
+            <Script async="async" data-cfasync="false" src="//pl27558650.revenuecpmgate.com/8ac7b37d1ecd27aabda82ae67fb0fc0b/invoke.js"></Script>
+            <div id="container-8ac7b37d1ecd27aabda82ae67fb0fc0b"></div>
 
             <section aria-label="Convert JSON to CSV or Excel">
                 <h2 className="text-lg font-semibold mb-2">{t.outputTitle}</h2>

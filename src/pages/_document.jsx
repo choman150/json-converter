@@ -36,6 +36,7 @@ export default function Document() {
                         __html: `(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9743651,document.createElement('script'))`,
                     }}
                 ></script>
+                <script type="text/javascript" src="//pl27558646.revenuecpmgate.com/52/73/b9/5273b9c0b6206f5c2dc8bb758e10d9d2.js"></script>
             </Head>
             <body>
                 <Main />
