@@ -156,86 +156,87 @@ export default function Converter() {
     };
 
     return (
-        <div className="p-6 max-w-5xl mx-auto">
-            <div className="flex justify-between items-center mb-6">
-                <h1 className="text-2xl md:text-3xl font-bold text-gray-800">{t.title}</h1>
-                {/* <select className="border rounded px-2 py-1 text-sm" value={lang} onChange={(e) => setLang(e.target.value)}>
+        <>
+            <Script async="async" data-cfasync="false" src="//pl27558650.revenuecpmgate.com/8ac7b37d1ecd27aabda82ae67fb0fc0b/invoke.js"></Script>
+            <div id="container-8ac7b37d1ecd27aabda82ae67fb0fc0b"></div>
+            <div className="p-6 max-w-5xl mx-auto">
+                <div className="flex justify-between items-center mb-6">
+                    <h1 className="text-2xl md:text-3xl font-bold text-gray-800">{t.title}</h1>
+                    {/* <select className="border rounded px-2 py-1 text-sm" value={lang} onChange={(e) => setLang(e.target.value)}>
                     <option value="ko">🇰🇷 한국어</option>
                     <option value="en">🇺🇸 English</option>
                 </select> */}
-            </div>
+                </div>
 
-            {/* 사용 목적 설명 */}
-            <section className="mt-6 bg-white p-6 rounded shadow-md" aria-label="Tool Description">
-                <h2 className="text-xl font-bold mb-2 text-gray-800">What is this tool?</h2>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                    This online tool allows you to easily convert between CSV, Excel, and JSON formats. It's designed for developers, data analysts, and anyone who needs to transform data formats
-                    quickly without installing any software. Whether you’re uploading a spreadsheet or pasting raw JSON, our converter will handle it instantly.
-                </p>
-            </section>
-            <section className="mb-10 mt-6" aria-label="Upload CSV or Excel">
-                <h2 className="text-lg font-semibold mb-2">{t.inputTitle}</h2>
-                <div className="flex flex-wrap gap-2 mb-4">
-                    <button onClick={() => fileInputRef.current.click()} className="bg-gray-700 text-white px-5 py-2 rounded hover:bg-gray-800">
-                        {t.uploadBtn}
-                    </button>
-                    <input ref={fileInputRef} type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" className="hidden" onChange={handleFileUpload} />
-                    {uploadJson && (
-                        <button onClick={handleCopyToClipboard} className="bg-yellow-500 text-white px-5 py-2 rounded hover:bg-yellow-600">
-                            {t.copyBtn}
+                {/* 사용 목적 설명 */}
+                <section className="mt-6 bg-white p-6 rounded shadow-md" aria-label="Tool Description">
+                    <h2 className="text-xl font-bold mb-2 text-gray-800">What is this tool?</h2>
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                        This online tool allows you to easily convert between CSV, Excel, and JSON formats. It's designed for developers, data analysts, and anyone who needs to transform data formats
+                        quickly without installing any software. Whether you’re uploading a spreadsheet or pasting raw JSON, our converter will handle it instantly.
+                    </p>
+                </section>
+                <section className="mb-10 mt-6" aria-label="Upload CSV or Excel">
+                    <h2 className="text-lg font-semibold mb-2">{t.inputTitle}</h2>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        <button onClick={() => fileInputRef.current.click()} className="bg-gray-700 text-white px-5 py-2 rounded hover:bg-gray-800">
+                            {t.uploadBtn}
                         </button>
-                    )}
-                </div>
-
-                {sheetNames.length > 1 && (
-                    <div className="mb-4">
-                        <label className="mr-2 font-medium">{t.sheetSelectLabel}</label>
-                        <select onChange={handleSheetSelect} className="border rounded px-2 py-1 text-sm" defaultValue={sheetNames[0]}>
-                            {sheetNames.map((name) => (
-                                <option key={name} value={name}>
-                                    {name}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                )}
-
-                {uploadJson && (
-                    <div className="overflow-auto border p-4 rounded bg-gray-50 shadow-inner max-h-[400px]">
-                        <pre className="text-xs whitespace-pre-wrap">{JSON.stringify(uploadJson, null, 2)}</pre>
-                    </div>
-                )}
-            </section>
-
-            <Script async="async" data-cfasync="false" src="//pl27558650.revenuecpmgate.com/8ac7b37d1ecd27aabda82ae67fb0fc0b/invoke.js"></Script>
-            <div id="container-8ac7b37d1ecd27aabda82ae67fb0fc0b"></div>
-
-            <section aria-label="Convert JSON to CSV or Excel">
-                <h2 className="text-lg font-semibold mb-2">{t.outputTitle}</h2>
-                <textarea
-                    className="w-full h-56 p-4 border rounded font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    placeholder={t.placeholder}
-                    value={inputText}
-                    onChange={(e) => setInputText(e.target.value)}
-                />
-                <div className="flex flex-wrap gap-2 mt-4">
-                    <button onClick={handleJsonInput} className="bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-600">
-                        {t.parseBtn}
-                    </button>
-                    {jsonData && (
-                        <>
-                            <button onClick={handleDownloadCSV} className="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700">
-                                {t.toCsvBtn}
+                        <input ref={fileInputRef} type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" className="hidden" onChange={handleFileUpload} />
+                        {uploadJson && (
+                            <button onClick={handleCopyToClipboard} className="bg-yellow-500 text-white px-5 py-2 rounded hover:bg-yellow-600">
+                                {t.copyBtn}
                             </button>
-                            <button onClick={handleDownloadExcel} className="bg-purple-600 text-white px-5 py-2 rounded hover:bg-purple-700">
-                                {t.toExcelBtn}
-                            </button>
-                        </>
-                    )}
-                </div>
-            </section>
+                        )}
+                    </div>
 
-            {error && <p className="text-red-500 font-medium mt-6">{error}</p>}
-        </div>
+                    {sheetNames.length > 1 && (
+                        <div className="mb-4">
+                            <label className="mr-2 font-medium">{t.sheetSelectLabel}</label>
+                            <select onChange={handleSheetSelect} className="border rounded px-2 py-1 text-sm" defaultValue={sheetNames[0]}>
+                                {sheetNames.map((name) => (
+                                    <option key={name} value={name}>
+                                        {name}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    )}
+
+                    {uploadJson && (
+                        <div className="overflow-auto border p-4 rounded bg-gray-50 shadow-inner max-h-[400px]">
+                            <pre className="text-xs whitespace-pre-wrap">{JSON.stringify(uploadJson, null, 2)}</pre>
+                        </div>
+                    )}
+                </section>
+
+                <section aria-label="Convert JSON to CSV or Excel">
+                    <h2 className="text-lg font-semibold mb-2">{t.outputTitle}</h2>
+                    <textarea
+                        className="w-full h-56 p-4 border rounded font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        placeholder={t.placeholder}
+                        value={inputText}
+                        onChange={(e) => setInputText(e.target.value)}
+                    />
+                    <div className="flex flex-wrap gap-2 mt-4">
+                        <button onClick={handleJsonInput} className="bg-blue-500 text-white px-5 py-2 rounded hover:bg-blue-600">
+                            {t.parseBtn}
+                        </button>
+                        {jsonData && (
+                            <>
+                                <button onClick={handleDownloadCSV} className="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700">
+                                    {t.toCsvBtn}
+                                </button>
+                                <button onClick={handleDownloadExcel} className="bg-purple-600 text-white px-5 py-2 rounded hover:bg-purple-700">
+                                    {t.toExcelBtn}
+                                </button>
+                            </>
+                        )}
+                    </div>
+                </section>
+
+                {error && <p className="text-red-500 font-medium mt-6">{error}</p>}
+            </div>
+        </>
     );
 }
