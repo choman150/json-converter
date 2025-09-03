@@ -5,6 +5,8 @@ import Papa from "papaparse";
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
 import Script from "next/script";
+import dynamic from "next/dynamic";
+const AdsterraBanner = dynamic(() => import("../components/AdsterraBanner"), { ssr: false });
 
 const messages = {
     en: {
@@ -209,6 +211,9 @@ export default function Converter() {
                         </div>
                     )}
                 </section>
+                <div className="ads-center">
+                    <AdsterraBanner adKey="22bfad104574c80bde3fd3a2f78fca57" width={728} height={90} />
+                </div>
 
                 <section aria-label="Convert JSON to CSV or Excel">
                     <h2 className="text-lg font-semibold mb-2">{t.outputTitle}</h2>
