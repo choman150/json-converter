@@ -31,7 +31,7 @@ body {
 /* test */
 
 .ads-left {
-    position: absolute;
+    position: fixed;
     left: 20px;
     top: 20px;
     width: 160px;
@@ -40,7 +40,7 @@ body {
 }
 
 .ads-right {
-    position: absolute;
+    position: fixed;
     right: 20px;
     top: 220px;
     width: 160px;
