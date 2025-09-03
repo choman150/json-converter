@@ -26,17 +26,17 @@ export default function Document() {
                 <link rel="icon" href="/favicon.ico" />
                 <link rel="canonical" href="https://csvtojson.choman150.click" />
                 <meta name="monetag" content="ee08585655f3142d50c7ade455e11520" />
-                {/* <script
+                <script
                     dangerouslySetInnerHTML={{
                         __html: `(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('gizokraijaw.net',9743653,document.createElement('script'))`,
                     }}
-                ></script> */}
+                ></script>
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9743651,document.createElement('script'))`,
                     }}
                 ></script>
-                <script type="text/javascript" src="//pl27558646.revenuecpmgate.com/52/73/b9/5273b9c0b6206f5c2dc8bb758e10d9d2.js"></script>
+                {/* <script type="text/javascript" src="//pl27558646.revenuecpmgate.com/52/73/b9/5273b9c0b6206f5c2dc8bb758e10d9d2.js"></script> */}
             </Head>
             <body>
                 <Main />
